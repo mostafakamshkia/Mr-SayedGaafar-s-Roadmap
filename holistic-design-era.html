@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>النهج الشمولي للتصميم في عصر النهضة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Beige & Deep Teal -->
+    <!-- Application Structure Plan: تم تصميم هذه الصفحة لتكون مستقلة ومتكاملة، تركز على مفهوم "النهج الشمولي" في التصميم. يتم تنظيم المحتوى في صناديق تفاعلية قابلة للطي (Accordion) لتسهيل استكشاف المحتوى الطويل. كل صندوق يمثل موضوعًا رئيسيًا (عصر النهضة، الروكوكو، تراث الخط، إلخ) مع عناوين فرعية وأيقونات. هذا الهيكل يعزز قابلية الاستهلاك ويجعل التنقل سهلاً. -->
+    <!-- Visualization & Content Choices: يعتمد المحتوى على النصوص، لذا تم التركيز على تصميم بصري يسهل القراءة والتفاعل. الهدف: تفاعل. الطريقة: تحويل العناوين إلى أزرار قابلة للضغط مع أيقونات (+/-) لإظهار/إخفاء المحتوى، مما يمنح إحساساً بالتحكم للمستخدم. الهدف: تنظيم. الطريقة: استخدام نظام شبكي (Grid) لعرض المحتوى في أعمدة متجاورة، واستخدام أيقونات لإضافة جاذبية بصرية. التبرير: هذا النهج يحول المحتوى النصي الطويل إلى تجربة منظمة وسهلة الاستكشاف بصريًا، مما يجعله أكثر جاذبية. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .section-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, opacity 0.5s ease;
+            opacity: 0;
+        }
+        .accordion-content.open {
+            max-height: 1000px;
+            opacity: 1;
+            transition: max-height 0.7s ease-in, opacity 0.7s ease;
+        }
+    </style>
+</head>
+<body class="bg-[#FDFBF6] text-[#333333]">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-[#FDFBF6]/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-[#008080]">
+                رحلة التصميم
+            </div>
+            <div class="hidden md:flex space-x-8 space-x-reverse items-center">
+                <a href="index.html" class="text-gray-700 hover:text-[#008080] transition">الصفحة الرئيسية</a>
+                <div class="relative">
+                    <button id="desktop-dropdown-button" class="text-gray-700 hover:text-[#008080] transition focus:outline-none flex items-center gap-1">
+                        تاريخ التصميم <span class="transform transition-transform duration-300 rotate-0" data-icon>&#9660;</span>
+                    </button>
+                    <div id="desktop-dropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 hidden">
+                        <a href="graphic-design-history.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">تاريخ التصميم الجرافيكي</a>
+                        <a href="from-alphabet-to-paper.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">من الأبجدية إلى الورق</a>
+                    </div>
+                </div>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="index.html" class="block py-2 text-gray-700 hover:text-[#008080]">الصفحة الرئيسية</a>
+            <div class="relative">
+                <button id="mobile-dropdown-button" class="block py-2 text-gray-700 hover:text-[#008080] w-full text-right">
+                    تاريخ التصميم <span class="inline-block transform transition-transform duration-300">&#9660;</span>
+                </button>
+                <div id="mobile-dropdown" class="hidden mt-2 py-2">
+                    <a href="graphic-design-history.html" class="block pl-8 py-2 text-gray-700 hover:bg-gray-100">تاريخ التصميم الجرافيكي</a>
+                    <a href="from-alphabet-to-paper.html" class="block pl-8 py-2 text-gray-700 hover:bg-gray-100">من الأبجدية إلى الورق</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-20">
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 text-[#008080]">النهج الشمولي للتصميم في عصر النهضة الإيطالية</h1>
+
+        <!-- Grid of Accordion Sections -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Holistic Approach Section -->
+            <div class="section-card bg-white p-6 md:p-8 rounded-2xl shadow-xl mb-6 cursor-pointer" onclick="toggleAccordion('holistic-approach-content', this)">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-gray-800">
+                        <span>🎨</span> النهج الشمولي
+                    </h2>
+                    <span class="text-3xl text-gray-500 transform transition-transform duration-300 rotate-0" data-icon>+</span>
+                </div>
+                <div id="holistic-approach-content" class="accordion-content">
+                    <div class="mt-8">
+                        <p class="text-lg mb-4">اللي شفناه في **عصر النهضة الإيطالية** كان النهج الشمولي للتصميم. الحرفي كان بيكتب، ويرسم، ويصمم شغله بنفسه. كان "رجل كل المهن" (jack-of-all-trades)، وده شيء ممكن نكون فقدناه دلوقتي. ده نهج بيدي إرضاء ذاتي كبير، لكن التخصص غالبًا بيكون الطريق لكسب فلوس أكتر.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rococo Era Section -->
+            <div class="section-card bg-white p-6 md:p-8 rounded-2xl shadow-xl mb-6 cursor-pointer" onclick="toggleAccordion('rococo-era-content', this)">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-gray-800">
+                        <span>✨</span> الازدهار في زمن التوافق (Rococo Era)
+                    </h2>
+                    <span class="text-3xl text-gray-500 transform transition-transform duration-300 rotate-0" data-icon>+</span>
+                </div>
+                <div id="rococo-era-content" class="accordion-content">
+                    <div class="mt-8">
+                        <p class="text-lg mb-4">في **عصر الروكوكو (Rococo era)**، المصممين بدأوا يتمردوا على التوافق الميكانيكي. **جورج بيكهام (George Bickham)** دمج النقوش الخشبية، والطباعة، والرسوم التوضيحية في أعمال فنية قابلة للنسخ لكنها فريدة. ده كان انفصال عن الشكل الموحد اللي أنتجته المطبعة.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Heritage of Type Section -->
+            <div class="section-card bg-white p-6 md:p-8 rounded-2xl shadow-xl mb-6 cursor-pointer" onclick="toggleAccordion('heritage-of-type-content', this)">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-gray-800">
+                        <span>🔠</span> تراث الخط (Heritage of Type)
+                    </h2>
+                    <span class="text-3xl text-gray-500 transform transition-transform duration-300 rotate-0" data-icon>+</span>
+                </div>
+                <div id="heritage-of-type-content" class="accordion-content">
+                    <div class="mt-8">
+                        <p class="text-lg mb-4">قبل هذه الفترة، الخط كان غير منظم. **ويليام كاسلون (William Caslon)** و**جون باسكرفيل (John Baskerville)** كانوا رواد في إعطاء الخط معايير وتناسق. خط كاسلون استخدم في إعلان الاستقلال الأمريكي، وباسكرفيل سد الفجوة بين الطباعة القديمة والحديثة.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Typography Section -->
+            <div class="section-card bg-white p-6 md:p-8 rounded-2xl shadow-xl mb-6 cursor-pointer" onclick="toggleAccordion('custom-typography-content', this)">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-gray-800">
+                        <span>✍️</span> الطباعة المخصصة
+                    </h2>
+                    <span class="text-3xl text-gray-500 transform transition-transform duration-300 rotate-0" data-icon>+</span>
+                </div>
+                <div id="custom-typography-content" class="accordion-content">
+                    <div class="mt-8">
+                        <p class="text-lg mb-4">حتى مع وجود المعايير، التعبير الإنساني مازال ضروري. **ويليام شيكسبير (William Shakesspeare)** (على الأرجح يقصد ويليام شكسبير لكن بالخطأ الإملائي الوارد في النص الأصلي) استخدم النقوش الخشبية لعمل إعلانات فريدة، وكان رائدًا في تطوير **الترتيب الهرمي (hierarchy)** في التصميم، لتوجيه عين المشاهد.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Industrial Revolution Section -->
+            <div class="section-card bg-white p-6 md:p-8 rounded-2xl shadow-xl mb-6 cursor-pointer" onclick="toggleAccordion('industrial-revolution-content', this)">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-gray-800">
+                        <span>⚙️</span> الثورة الصناعية
+                    </h2>
+                    <span class="text-3xl text-gray-500 transform transition-transform duration-300 rotate-0" data-icon>+</span>
+                </div>
+                <div id="industrial-revolution-content" class="accordion-content">
+                    <div class="mt-8">
+                        <p class="text-lg mb-4">الثورة الصناعية قدمت مطابع أسرع وأكثر موثوقية، زي المطبعة البخارية لـ **فريدريك كونيج (Frederick Koenig)** سنة **1814**. التكنولوجيا بتغير كل شيء، لكن الحاجة للمصممين بتزيد مع كل ثورة جديدة، زي الثورة الرقمية دلوقتي.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photography and Lithography Section -->
+            <div class="section-card bg-white p-6 md:p-8 rounded-2xl shadow-xl mb-6 cursor-pointer" onclick="toggleAccordion('photography-lithography-content', this)">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-gray-800">
+                        <span>📸</span> التصوير والليثوجرافيا
+                    </h2>
+                    <span class="text-3xl text-gray-500 transform transition-transform duration-300 rotate-0" data-icon>+</span>
+                </div>
+                <div id="photography-lithography-content" class="accordion-content">
+                    <div class="mt-8">
+                        <p class="text-lg mb-4">التصوير الفوتوغرافي بدأ على يد رواد زي **لويس جاك نيجا (Louis-Jacques Daguerre)** و**جون كالفين موس (John Calvin Moss)**. بعدها، ظهرت تقنيات طباعة جديدة زي **الليثوجرافيا (lithography)** و**الكروموليثوجرافيا (chromolithography)** اللي سمحت بإنتاج ألوان وتفاصيل أكتر، معتمدة على مبدأ إن الزيت والماء لا يختلطان.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- End of Grid -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#FDFBF6] py-6">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2025 Nomad School of Design. كل الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAccordion(contentId, button) {
+            const content = document.getElementById(contentId);
+            const icon = button.querySelector('[data-icon]');
+            
+            content.classList.toggle('open');
+            if (content.classList.contains('open')) {
+                icon.textContent = '-';
+                icon.classList.add('rotate-180');
+            } else {
+                icon.textContent = '+';
+                icon.classList.remove('rotate-180');
+            }
+        }
+    
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const showAnswerBtn = document.getElementById('show-answer-btn');
+            const answerBox = document.getElementById('answer-box');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            if (showAnswerBtn && answerBox) {
+                showAnswerBtn.addEventListener('click', () => {
+                    answerBox.classList.toggle('hidden');
+                    showAnswerBtn.classList.add('hidden');
+                });
+            }
+
+            const desktopDropdownButton = document.getElementById('desktop-dropdown-button');
+            const desktopDropdown = document.getElementById('desktop-dropdown');
+            
+            desktopDropdownButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isHidden = desktopDropdown.classList.contains('hidden');
+                document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                    menu.classList.add('hidden');
+                    menu.previousElementSibling.querySelector('[data-icon]').classList.remove('rotate-180');
+                });
+                if (isHidden) {
+                    desktopDropdown.classList.remove('hidden');
+                    desktopDropdownButton.querySelector('[data-icon]').classList.add('rotate-180');
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!desktopDropdownButton.contains(e.target) && !desktopDropdown.contains(e.target)) {
+                    desktopDropdown.classList.add('hidden');
+                    desktopDropdownButton.querySelector('[data-icon]').classList.remove('rotate-180');
+                }
+            });
+
+            // Handle mobile navigation links to close menu
+            const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مقدمة في تاريخ التصميم الجرافيكي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .section-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .hero-bg {
+            background-image: url('IMG/cavar.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-[#FDFBF6] text-[#333333]">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-[#FDFBF6]/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-[#008080]">
+                رحلة التصميم
+            </div>
+            <div class="hidden md:flex space-x-8 space-x-reverse items-center">
+                <a href="index.html" class="text-gray-700 hover:text-[#008080] transition">الصفحة الرئيسية</a>
+                <div class="relative">
+                    <button id="desktop-dropdown-button" class="text-gray-700 hover:text-[#008080] transition focus:outline-none flex items-center gap-1">
+                        تاريخ التصميم <span class="transform transition-transform duration-300 rotate-0" data-icon>&#9660;</span>
+                    </button>
+                    <div id="desktop-dropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 hidden">
+                        <a href="graphic-design-history.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">تاريخ التصميم الجرافيكي</a>
+                        <a href="from-alphabet-to-paper.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">من الأبجدية إلى الورق</a>
+                    </div>
+                </div>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="index.html" class="block py-2 text-gray-700 hover:text-[#008080]">الصفحة الرئيسية</a>
+            <div class="relative">
+                <button id="mobile-dropdown-button" class="block py-2 text-gray-700 hover:text-[#008080] w-full text-right">
+                    تاريخ التصميم <span class="inline-block transform transition-transform duration-300">&#9660;</span>
+                </button>
+                <div id="mobile-dropdown" class="hidden mt-2 py-2">
+                    <a href="graphic-design-history.html" class="block pl-8 py-2 text-gray-700 hover:bg-gray-100">تاريخ التصميم الجرافيكي</a>
+                    <a href="from-alphabet-to-paper.html" class="block pl-8 py-2 text-gray-700 hover:bg-gray-100">من الأبجدية إلى الورق</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="hero-bg">
+        <!-- Hero Section -->
+        <section id="hero" class="relative z-10 container mx-auto px-6 py-20 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">مرحباً بكم في <span class="text-[#008080]">GridGuides</span></h1>
+            <p class="text-lg md:text-xl text-gray-800 max-w-3xl mx-auto">
+                أنا متحمس جداً لوجودكم هنا. أنصحكم بتحضير مشروبكم المفضل والاستمتاع بهذه الرحلة، لأن فهم تاريخ التصميم الجرافيكي أمر <span class="font-bold text-[#008080]">حاسم</span> لمسيرتك كمصمم.
+            </p>
+        </section>
+
+        <!-- Importance Section -->
+        <section id="importance" class="relative z-10 py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">لماذا تاريخ التصميم مهم؟</h2>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">فهم الماضي هو أساس إبداعك في الحاضر. معرفة "لماذا" و"كيف" استُخدمت تقنيات معينة يمنحك القوة لاستخدامها بدقة ووعي.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="section-card bg-[#FDFBF6] p-8 rounded-xl shadow-lg text-center">
+                        <div class="text-4xl mb-4">📜</div>
+                        <h3 class="text-2xl font-bold mb-2">فهم الأساس</h3>
+                        <p class="text-gray-600">لمعرفة كيفية استخدام الأدوات والتقنيات بشكل صحيح، يجب أن تفهم من أين أتت وما هو هدفها الأصلي.</p>
+                    </div>
+                    <div class="section-card bg-[#FDFBF6] p-8 rounded-xl shadow-lg text-center">
+                        <div class="text-4xl mb-4">💡</div>
+                        <h3 class="text-2xl font-bold mb-2">الإلهام الدقيق</h3>
+                        <p class="text-gray-600">عندما تستلهم من أساتذة الماضي، ستتمكن من تطبيق أفكارهم في الحاضر بشكل صحيح ومؤثر، وليس مجرد تقليد.</p>
+                    </div>
+                    <div class="section-card bg-[#FDFBF6] p-8 rounded-xl shadow-lg text-center">
+                        <div class="text-4xl mb-4">🗣️</div>
+                        <h3 class="text-2xl font-bold mb-2">تطوير لغتك البصرية</h3>
+                        <p class="text-gray-600">تاريخ التصميم يعلمك اللغة التي تتحدث بها الألوان والأشكال والأساليب، مما يجعلك متواصلاً أفضل.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Concept Section -->
+        <section id="concept" class="relative z-10 py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold">الفرق بين الخلط الإبداعي والتواصل</h2>
+                    <p class="text-gray-600 mt-4 max-w-2xl mx-auto">كمصممين، هدفنا هو أن نكون خبراء في التواصل، لا أن نسبب الحيرة. فهم التاريخ يضمن أن رسالتك تصل بوضوح.</p>
+                </div>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+                    <div class="border-2 border-red-300 bg-red-50 p-8 rounded-lg text-center">
+                        <h3 class="text-2xl font-bold text-red-800 mb-4">الخلط الإبداعي 😵</h3>
+                        <p class="text-red-700">يحدث عندما تستخدم أسلوباً لا تفهم سياقه التاريخي، فتوصل رسالة "ب" بينما كنت تقصد "أ". العقل الباطن للجمهور يفهم الأصل، حتى لو أنت بتحاول تستخدمه بالطريقة دي.</p>
+                    </div>
+                    <div class="border-2 border-teal-300 bg-teal-50 p-8 rounded-lg text-center">
+                        <h3 class="text-2xl font-bold text-teal-800 mb-4">التواصل الفعال ✅</h3>
+                        <p class="text-teal-700">يتحقق عندما تستخدم كل عنصر في تصميمك بوعي، مدركاً لأصله ومعناه، فتصل رسالتك كما أردتها تماماً، واضحة ومباشرة ومؤثرة.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Us Section -->
+        <section id="join" class="relative z-10 py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <div class="bg-[#008080] text-white max-w-4xl mx-auto p-10 rounded-2xl shadow-2xl">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">مرحباً بكم في مجتمعنا!</h2>
+                    <p class="text-lg mb-8">
+                        لو عايز تتعلم التصميم من الصفر وتكون مصمم محترف، انضم دلوقتي لمجتمع **GridGuides** على فيس بوك!
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <a href="https://www.facebook.com/groups/gridguides" class="bg-[#FDFBF6] text-[#008080] font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-200 transition transform hover:scale-105">
+                            انضم لمجموعة GridGuides
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="relative z-10 py-20">
+            <div class="container mx-auto px-6 text-center">
+                <div class="grid md:grid-cols-2 gap-12 max-w-3xl mx-auto">
+                    <!-- Sayed Gaafar -->
+                    <div class="flex flex-col items-center">
+                        <img src="IMG/MAN1.jpg" alt="صورة سيد جعفر" class="w-40 h-40 rounded-full object-cover mb-4 shadow-xl border-4 border-[#008080]">
+                        <h3 class="text-2xl font-bold mb-1">Sayed Gaafar</h3>
+                        <p class="text-gray-600 mb-2">صاحب جروب GridGuides</p>
+                        <a href="https://www.facebook.com/srgaafar/" class="text-[#008080] hover:text-gray-700 transition">صفحة فيس بوك</a>
+                    </div>
+                    <!-- Mostafa Kmshkat -->
+                    <div class="flex flex-col items-center">
+                        <img src="IMG/MOSTAFA.jpg" alt="صورة مصطفى كمشكاة" class="w-40 h-40 rounded-full object-cover mb-4 shadow-xl border-4 border-[#008080]">
+                        <h3 class="text-2xl font-bold mb-1">Mostafa Kmshkat</h3>
+                        <p class="text-gray-600 mb-2">منشئ الموقع</p>
+                        <a href="https://www.facebook.com/MostafaKmshkat" class="text-[#008080] hover:text-gray-700 transition">صفحة فيس بوك</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#FDFBF6] py-6">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2025 Nomad School of Design. كل الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileDropdownButton = document.getElementById('mobile-dropdown-button');
+            const mobileDropdown = document.getElementById('mobile-dropdown');
+            
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileDropdownButton.addEventListener('click', () => {
+                mobileDropdown.classList.toggle('hidden');
+            });
+
+            const desktopDropdownButton = document.getElementById('desktop-dropdown-button');
+            const desktopDropdown = document.getElementById('desktop-dropdown');
+            
+            desktopDropdownButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                desktopDropdown.classList.toggle('hidden');
+                if (desktopDropdown.classList.contains('hidden')) {
+                    desktopDropdownButton.querySelector('[data-icon]').classList.remove('rotate-180');
+                } else {
+                    desktopDropdownButton.querySelector('[data-icon]').classList.add('rotate-180');
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!desktopDropdownButton.contains(e.target) && !desktopDropdown.contains(e.target)) {
+                    desktopDropdown.classList.add('hidden');
+                    desktopDropdownButton.querySelector('[data-icon]').classList.remove('rotate-180');
+                }
+            });
+
+            // Handle mobile navigation links to close menu
+            const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
